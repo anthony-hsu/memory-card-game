@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import Card from "./Card";
 import uniqid from "uniqid";
+import PropTypes from "prop-types";
 
 const Board = (props) => {
   const { seen, setSeen, setGameOver, currentScore, setCurrentScore } = props;
@@ -37,6 +38,14 @@ const Board = (props) => {
       ))}
     </div>
   );
+};
+
+Board.propTypes = {
+  seen: PropTypes.bool,
+  setSeen: PropTypes.func,
+  setGameOver: PropTypes.func,
+  currentScore: PropTypes.number,
+  setCurrentScore: PropTypes.func,
 };
 
 export default Board;

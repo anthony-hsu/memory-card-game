@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Header(props) {
   const { currentScore, highScore } = props;
   return (
@@ -10,5 +12,10 @@ function Header(props) {
     </div>
   );
 }
+
+Header.propTypes = {
+  currentScore: PropTypes.number,
+  highScore: PropTypes.number,
+};
 
 export default Header;

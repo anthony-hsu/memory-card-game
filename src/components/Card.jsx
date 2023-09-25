@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const Card = (props) => {
   const {
     currentScore,
@@ -9,7 +11,7 @@ const Card = (props) => {
   } = props;
   const imgLocation = `/images/${imgNumber}.png`;
 
-  const handleClick = (e) => {
+  const handleClick = () => {
     let newSeen = [];
     if (seen.includes(imgNumber)) {
       // Clicked on a seen image
@@ -27,6 +29,15 @@ const Card = (props) => {
       <img src={imgLocation} alt="emoji" onClick={handleClick}></img>
     </div>
   );
+};
+
+Card.propTypes = {
+  currentScore: PropTypes.number,
+  setCurrentScore: PropTypes.func,
+  imgNumber: PropTypes.number,
+  seen: PropTypes.bool,
+  setGameOver: PropTypes.func,
+  setSeen: PropTypes.func,
 };
 
 export default Card;
