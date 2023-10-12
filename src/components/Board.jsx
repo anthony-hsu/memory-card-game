@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Board = (props) => {
   const { seen, setSeen, setGameOver, currentScore, setCurrentScore } = props;
-  const numCards = 10;
+  const numCards = 12;
 
   const getNewCards = (n) => {
     const newCards = [];
